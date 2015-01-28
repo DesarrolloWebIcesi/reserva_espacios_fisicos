@@ -115,7 +115,13 @@ $(function(){
 				    descripcion_tipo=$("#tipo_espacio option:selected").text();
 					descripcion_espacio= $("#espacio_fisico option:selected").text();  
 				  }
-				  else if(esp_fisico=="SDA"){
+				  
+				  /*
+				   * @author	Christian David Criollo <cdcriollo@icesi.edu.co>
+				  * @since	2015-01-28
+				  * Se adiciono el espacio fisico Sala de reuniones multiple segun caso de soporte 171594 SGS
+				  */
+				  else if(esp_fisico=="SDA" || esp_fisico=="SRMU"){
 					oficina="Planeación Académica";
 				    descripcion_tipo=$("#tipo_espacio option:selected").text();
 					descripcion_espacio= $("#espacio_fisico option:selected").text();    

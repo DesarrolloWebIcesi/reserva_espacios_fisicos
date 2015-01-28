@@ -115,8 +115,13 @@ function obtenerTipoEspacio($tipousuario)
 		  $sql="SELECT CODIGO, DESCRIPCION FROM TBAS_RECURSOS WHERE CODIGO LIKE 'SW%' ORDER BY DESCRIPCION"; 
 		  break;
 		  
+		  /*
+		   * @author	Christian David Criollo <cdcriollo@icesi.edu.co>
+		  * @since	2015-01-28
+		  * Se modifico el query para adiconar el espacio fisico Sala de reuniones multiple segun caso de soporte 171594 SGS
+		  */
 		  case 'sa':
-		  $sql="SELECT CODIGO, DESCRIPCION FROM TBAS_ESPACIOS_FISIC WHERE TIPO= 'SA' AND CODIGO IN ('SDA', 'SVC1', 'SVC2') AND ESTADO='A' ORDER BY DESCRIPCION";
+		  $sql="SELECT CODIGO, DESCRIPCION FROM TBAS_ESPACIOS_FISIC WHERE TIPO= 'SA' AND CODIGO IN ('SDA', 'SVC1', 'SVC2','SRMU') AND ESTADO='A' ORDER BY DESCRIPCION";
 		  break;
 		  
 		  case 'l':

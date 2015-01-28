@@ -162,7 +162,12 @@ switch($tipo_espacio)
 	break;
 	
 	case 'sa':
-	 if($espacio_fisico== "SDA"){
+		/*
+		 * @author	Christian David Criollo <cdcriollo@icesi.edu.co>
+		* @since	2015-01-28
+		* Se adiciono el espacio fisico Sala de reuniones multiple segun caso de soporte 171594 SGS
+		*/
+	 if($espacio_fisico== "SDA" || $espacio_fisico== "SRMU"){
 	   $correo_oficina= $espacios_fisicos['sala_reuniones_direccion']['correo']; 
 	   $extension_oficina=$espacios_fisicos['sala_reuniones_direccion']['extensiones'];	 
 	 }
