@@ -137,6 +137,22 @@ else if($_POST['option']== 'getAntelacion')
 		    $response= array('dias'=> $diasAntelacion, 'correo'=>$correo_oficina, 'extension'=> $extension_oficina, 'oficina'=> $oficina, 'espacio'=> $descripcion_espacio);  
 		    echo json_encode($response);
 		   }
+		   
+		   /*
+		    * @author	Christian David Criollo <cdcriollo@icesi.edu.co>
+		   * @since	2015-01-28
+		   * Se adiciono espacio fisico Sala de reuniones multiple segun caso de soporte 171594 SGS
+		   */
+		   else if($_POST['espacio']=="SRMU" )
+		   {
+		   	$diasAntelacion= $saladereunionesyvideoconferencias;
+		   	$descripcion_espacio= 'Sala de reuniones múltiple ';
+		   	$oficina= 'Planeación Académica';
+		   	$correo_oficina= $espacios_fisicos['sala_reuniones_direccion']['correo'];
+		   	$extension_oficina= $espacios_fisicos['sala_reuniones_direccion']['extensiones'];
+		   	$response= array('dias'=> $diasAntelacion, 'correo'=>$correo_oficina, 'extension'=> $extension_oficina, 'oficina'=> $oficina, 'espacio'=> $descripcion_espacio);
+		   	echo json_encode($response);
+		   }
 			break;
 		  
 		  
@@ -218,7 +234,13 @@ else if($_POST['option']== "getANS")
 		    $response= array('ans'=> $url_ans, 'condiciones_uso'=>$url_condiciones); 
 		    echo json_encode($response);
 		   }
-		   else if($_POST['espacio']=="SDA"){
+		   
+		   /*
+		    * @author	Christian David Criollo <cdcriollo@icesi.edu.co>
+		   * @since	2015-01-28
+		   * Se adiciono espacio fisico Sala de reuniones multiple segun caso de soporte 171594 SGS
+		   */
+		   else if($_POST['espacio']=="SDA" || $_POST['espacio']=="SRMU"){
 			 $url_ans= $reserva_saladereunionesdacad;
 			 $url_condiciones= '../view/info.php?mensaje=2';
 		     $response= array('ans'=> $url_ans, 'condiciones_uso'=>$url_condiciones); 
