@@ -31,6 +31,7 @@ $(function(){
 	$("#telefono_sol").attr('disabled',"disabled");
     $("#email_sol").attr('disabled',"disabled");
 	$("#div_aud").hide();
+        $("#div_aud_2").hide();
 	
 	//Desabilitan campos del responsable
 	$("#nombre_resp").attr('disabled',"disabled");
@@ -874,10 +875,12 @@ $(function(){
 	 if(valor=="a")
 	 {
 		$("#div_aud").show('clip');
+                $("#div_aud_2").show('clip');
 	 }
 	 else
 	{
 	  $("#div_aud").hide(); 
+          $("#div_aud_2").hide();
 	}
 	
 	

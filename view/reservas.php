@@ -201,7 +201,7 @@ else
                     <td><select size="1" id="tipo_espacio" name="tipo_espacio" ></select></td>
                     <td>
                        <div id="div_aud" class="div-msg-aud">
-                         <p class="p-text-aud"> Tener presente solicitarlo 30 minutos antes de iniciar el evento, para efectos de organización y pruebas</p>
+                         <p class="p-text-aud"> No se debe fumar, ni ingresar alimentos y/o bebidas al interior de los auditorios</p>
                          </div>
                     </td>
                     </tr>
@@ -237,6 +237,11 @@ else
                        <td><label class="label-bold" for="hora_inicio" >Hora inicio reserva:</label></td>
                        <td><input type="text" id="hora_inicio"  name="hora_inicio" size="25" readonly />
                         <button id="mostrar_hora_inicio" title="De click para seleccionar una hora"><img src="../images/clock.png" style="cursor:pointer; vertical-align:middle" /></button>
+                       </td>
+                       <td>
+                       <div id="div_aud_2" class="div-msg-aud">
+                         <p class="p-text-aud"> Tener presente solicitarlo 30 minutos antes de iniciar el evento, para efectos de organización y pruebas</p>
+                         </div>
                        </td>
                     </tr> 
                     
