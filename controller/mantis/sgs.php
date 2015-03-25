@@ -60,6 +60,7 @@ $software_principal= trim($_POST['software_principal']);
 $software_secundario= trim($_POST['software_secundario']);
 $codigo_software_p= trim($_POST['cod_soft_principal']);
 $codigo_software_s= trim($_POST['cod_soft_secundario']);
+$zona_recibo= trim($_POST['zonarecibo']);
 
 // Variables proteccion de datos personales
 $aceptacion= "S";
@@ -163,7 +164,7 @@ switch($tipo_espacio)
 	
 	case 'sa':
 
-	 if($espacio_fisico== "SDA"){
+	 //if($espacio_fisico== "SDA"){
 
 		/*
 		 * @author	Christian David Criollo <cdcriollo@icesi.edu.co>
@@ -234,6 +235,11 @@ switch($tipo_espacio)
 	  {
 		 $msg .="\tSoftware primario: ". trim($_POST["software_principal"])."\n"; // se visualiza como <codigo> <nombre>
 		 $msg .="\tSoftware secundario: ".trim($_POST["software_secundario"])."\n"; // se visualiza como <codigo> <nombre>   
+	  }
+          
+          if($tipo_espacio=="a")
+	  {
+	      $msg .="\tRequiere zona de recibo: ". trim($_POST["zonarecibo"])."\n"; // Se muestra en la descripcion del caso si el usuario requiere zona de recibo 
 	  }
 	  
 	  $msg.= "\tNúmero de personas: " . trim($_POST["numero_personas"])."\n";
