@@ -250,7 +250,17 @@ else
                       <td><input type="text" id="hora_final" name="hora_final" size="25" readonly />
                       <button id="mostrar_hora_final"  title="De click para seleccionar una hora"><img src="../images/clock.png" style="cursor:pointer; vertical-align:middle"/></button>
                       </td>
-                    </tr>	
+                    </tr>
+                    
+                    <tr> 
+                        <td><label class="label-bold" for="zrecibo" id="lblzrecibo" >Requiere zona de recibo:</label></td>
+                        <td>
+                          <select size="1" id="zrecibo" name="zrecibo" >
+                           <option value="No">No </option>
+                           <option value="Si">Si </option>
+                         </select>
+                        </td>
+                    </tr>
                     </table>
                        
                 </section>
