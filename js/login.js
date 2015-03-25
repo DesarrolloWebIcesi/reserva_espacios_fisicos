@@ -21,6 +21,7 @@ $(function(){
 		}
    }*/
 
+$("#cedula").focus();	
 
 // Configuracion de nensajes jquery validator
   $.extend(jQuery.validator.messages, {
