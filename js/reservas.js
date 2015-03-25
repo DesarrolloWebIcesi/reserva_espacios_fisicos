@@ -26,6 +26,8 @@ $(function(){
 	$("#lblsoftwarep").css('display', 'none');
 	$("#software_secundario").css('display', 'none');
 	$("#lblsoftwares").css('display', 'none');
+        $("#zrecibo").css('display', 'none'); 
+	$("#lblzrecibo").css('display', 'none');
 	
 	//Se desabilitan campos del solicitante
 	$("#telefono_sol").attr('disabled',"disabled");
@@ -170,7 +172,8 @@ $(function(){
 				'cod_soft_principal': cod_soft_principal,
 				'cod_soft_secundario': cod_soft_secundario,
 				'codigo_solicitante': $("#cod_solicitante").val(),
-				'codigo_responsable':  $("#cod_responsable").val()
+				'codigo_responsable':  $("#cod_responsable").val(),
+                                'zonarecibo': $("#zrecibo").val(),
 					
 			 }
 			 
@@ -876,11 +879,15 @@ $(function(){
 	 {
 		$("#div_aud").show('clip');
                 $("#div_aud_2").show('clip');
+                $("#zrecibo").show('slow');  
+		$("#lblzrecibo").show('slow');
 	 }
 	 else
 	{
 	  $("#div_aud").hide(); 
           $("#div_aud_2").hide();
+          $("#zrecibo").hide(); 
+	  $("#lblzrecibo").hide();
 	}
 	
 	
@@ -933,12 +940,14 @@ $(function(){
 	 }
 	 else
 	 {
-		$("#espacio_fisico").hide();  
+	    $("#espacio_fisico").hide();  
 	    $("#lblespacio").hide();
-		$("#software_principal").hide();  
-		$("#lblsoftwarep").hide(); 
-		$("#software_secundario").hide();  
-		$("#lblsoftwares").hide();   
+	    $("#software_principal").hide();  
+	    $("#lblsoftwarep").hide(); 
+            $("#software_secundario").hide();  
+	    $("#lblsoftwares").hide(); 
+            $("#zrecibo").hide(); 
+	    $("#lblzrecibo").hide();
 	 }
 	
 	 	  
