@@ -28,17 +28,17 @@ $(function(){
 	$("#lblsoftwares").css('display', 'none');
         $("#zrecibo").css('display', 'none'); 
 	$("#lblzrecibo").css('display', 'none');
+        $("#div_aud").css('display', 'none');
+	$("#div_aud_2").css('display', 'none');
 	
 	//Se desabilitan campos del solicitante
 	$("#telefono_sol").attr('disabled',"disabled");
-    $("#email_sol").attr('disabled',"disabled");
-	$("#div_aud").hide();
-        $("#div_aud_2").hide();
+        $("#email_sol").attr('disabled',"disabled");
 	
 	//Desabilitan campos del responsable
 	$("#nombre_resp").attr('disabled',"disabled");
-    $("#email_resp").attr('disabled',"disabled");
-    $("#telefono_resp").attr('disabled',"disabled");
+        $("#email_resp").attr('disabled',"disabled");
+        $("#telefono_resp").attr('disabled',"disabled");
 	$("#dependencia_resp").attr('disabled',"disabled");
 	
 	//Limpia el foemulario para una nueva reserva
@@ -917,7 +917,9 @@ $(function(){
 				  $("#software_principal").hide();  
 				  $("#lblsoftwarep").hide(); 
 				  $("#software_secundario").hide();  
-				  $("#lblsoftwares").hide(); 
+				  $("#lblsoftwares").hide();
+                                  $("#zrecibo").hide(); 
+	                          $("#lblzrecibo").hide();
 				   
 			  }
 			  else if(valor == 'sc')
@@ -933,7 +935,9 @@ $(function(){
 				 $("#software_secundario").show('slow');  
 				 $("#lblsoftwares").show('slow');
 				 $("#espacio_fisico").hide();  
-				 $("#lblespacio").hide(); 
+				 $("#lblespacio").hide();
+                                 $("#zrecibo").hide(); 
+	                         $("#lblzrecibo").hide();
 			  }
 		   }
 		 }); 
@@ -946,8 +950,6 @@ $(function(){
 	    $("#lblsoftwarep").hide(); 
             $("#software_secundario").hide();  
 	    $("#lblsoftwares").hide(); 
-            $("#zrecibo").hide(); 
-	    $("#lblzrecibo").hide();
 	 }
 	
 	 	  
