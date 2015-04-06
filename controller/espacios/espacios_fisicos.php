@@ -97,13 +97,16 @@ else if($_POST['option']== 'getAntelacion')
 		     break;
 		  
 		  case 'a':
-		    $diasAntelacion= $auditorios;
+		        $diasAntelacion= $auditorios;
 			$descripcion_espacio= 'Auditorios';
-			$oficina= 'Planeación Académica';
+			/*$oficina= 'Planeación Académica';
 			$correo_oficina= $espacios_fisicos['auditorios']['correo']; 
-	        $extension_oficina= $espacios_fisicos['auditorios']['extensiones'];
-		    $response= array('dias'=> $diasAntelacion, 'correo'=>$correo_oficina, 'extension'=> $extension_oficina, 'oficina'=> $oficina, 'espacio'=> $descripcion_espacio);  
-		    echo json_encode($response);
+	                $extension_oficina= $espacios_fisicos['auditorios']['extensiones'];*/
+                        $oficina= 'SYRI-Multimedios';
+		        $correo_oficina= $espacios_fisicos['camara_gesell']['correo']; 
+	                $extension_oficina= $espacios_fisicos['camara_gesell']['extensiones'];
+		        $response= array('dias'=> $diasAntelacion, 'correo'=>$correo_oficina, 'extension'=> $extension_oficina, 'oficina'=> $oficina, 'espacio'=> $descripcion_espacio);  
+		        echo json_encode($response);
 		  break;
 		  
 		  case 'sc':
