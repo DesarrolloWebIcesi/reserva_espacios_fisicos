@@ -118,14 +118,19 @@ function obtenerTipoEspacio($tipousuario)
 		  /*
 		   * @author	Christian David Criollo <cdcriollo@icesi.edu.co>
 		  * @since	2015-01-28
-		  * Se modifico el query para adiconar el espacio fisico Sala de reuniones multiple segun caso de soporte 171594 SGS
+		  * Se modifico el query para adicionar el espacio fisico Sala de reuniones multiple segun caso de soporte 171594 SGS
 		  */
 		  case 'sa':
-		  $sql="SELECT CODIGO, DESCRIPCION FROM TBAS_ESPACIOS_FISIC WHERE TIPO= 'SA' AND CODIGO IN ('SDA', 'SVC1', 'SVC2','SRMU') AND ESTADO='A' ORDER BY DESCRIPCION";
+		  $sql="SELECT CODIGO, DESCRIPCION FROM TBAS_ESPACIOS_FISIC WHERE TIPO= 'SA' AND CODIGO IN ('SDA', 'SVC1', 'SVC2', 'SRMU') AND ESTADO='A' ORDER BY DESCRIPCION";	
 		  break;
 		  
 		  case 'l':
-		  if($_SESSION['tipo']== 'Estudiante Pregrado' || $_SESSION['tipo']== 'Estudiante Postgrado')
+                      //ffceballos: se adicionó la variable estudiante_industrial para validar aunque no sea el programa principal
+                  if(($_SESSION['tipo']== 'Estudiante Pregrado' && $_SESSION['programa']== 'industrial') || $_SESSION['estudiante_industrial']>0 )
+                  {
+                    $sql=  "SELECT CODIGO, DESCRIPCION FROM TBAS_ESPACIOS_FISIC WHERE TIPO= 'L' AND CODIGO IN ('202H') AND ESTADO='A' ORDER BY DESCRIPCION";  
+                  }
+                  else if($_SESSION['tipo']== 'Estudiante Pregrado' || $_SESSION['tipo']== 'Estudiante Postgrado')
 		  {
 		    $sql=  "SELECT CODIGO, DESCRIPCION FROM TBAS_ESPACIOS_FISIC WHERE TIPO= 'L' AND CODIGO IN ('102F', '103F') AND ESTADO='A' ORDER BY DESCRIPCION";
 		  }
