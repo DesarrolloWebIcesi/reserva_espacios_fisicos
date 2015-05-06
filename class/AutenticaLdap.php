@@ -52,7 +52,13 @@ class AutenticaLdap
 			}
 			else if (strpos($this->dn, "pregrado")==true)
 			{
-				$_SESSION['tipo']='Estudiante Pregrado';
+			    $_SESSION['tipo']='Estudiante Pregrado';
+                                
+                            if (strpos($this->dn, "industrial")==true)
+                            {
+                                $_SESSION['programa']='industrial';
+                            }
+              
 			}
 			else if (strpos($this->dn, "profesores")== true)
 			{
@@ -167,6 +173,26 @@ class AutenticaLdap
 				$_SESSION['telefono']=$fila[3];
 				$_SESSION['celular']=$fila[4];
 				$_SESSION['dn']=$entries[0]['dn'];
+				
+				//ffceballos - Consulta para averiguar si el estudiante tiene programa activo ing industrial
+				
+					$sql="select  count(alumno_codigo)
+					from TBAS_HIST_PROG_ESTUD his, tbas_alumnos alu
+					where activo='S'
+					and per_acad_periodo_acad||per_acad_consecutivo=fprebus_constantes ('002', '0304', '') 
+					and programa_codigo = '04' 
+					and numid='".$idUsuario."' 
+					and codigo=alumno_codigo";
+					
+				$resultado= $datos_resp->ejecutarConsulta($sql);
+				$fila=$datos_resp->siguienteFila($resultado);
+				
+				$coincidencia=0;
+				$coincidencia= utf8_encode($fila[0]);
+				$_SESSION['estudiante_industrial']=$coincidencia;
+				
+				//fin ffceballos
+				
 			}
 			
 			//Se cierra la conexión con la base de datos
