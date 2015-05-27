@@ -112,7 +112,12 @@ function obtenerTipoEspacio($tipousuario)
 	  switch($tipoespacio)
 	  {
 		  case 'sc':
-		  $sql="SELECT CODIGO, DESCRIPCION FROM TBAS_RECURSOS WHERE CODIGO LIKE 'SW%' ORDER BY DESCRIPCION"; 
+		  //$sql="SELECT CODIGO, DESCRIPCION FROM TBAS_RECURSOS WHERE CODIGO LIKE 'SW%' ORDER BY DESCRIPCION";
+                   $sql="select ya.codigo, initcap (ya.descripcion) descripcion "
+	          ."from tbas_recursos ya "
+	          ."where ya.codigo like 'SWR%'"
+		  ."and ya.activo = 'S'"
+		  ."order by ya.descripcion"; 
 		  break;
 		  
 		  /*
